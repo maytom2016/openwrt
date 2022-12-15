@@ -89,10 +89,8 @@ jobs:
       id: organize_config
       run: |
         cd openwrt
-        rm -f .config.old
-        make defconfig
         mkdir -p /tmp/upload/config
-        ./scripts/diffconfig.sh > /tmp/upload/config/seed.config
+        cp ./.config /tmp/upload/config/.config
         echo "status=success" >> $GITHUB_OUTPUT
         echo "FILE_DATE=$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
 

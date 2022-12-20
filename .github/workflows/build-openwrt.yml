@@ -61,6 +61,7 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
+        git init
         git checkout -b $REPO_BRANCH $REPO_COMMITID
         cd ..
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt

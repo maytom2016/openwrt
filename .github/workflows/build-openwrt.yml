@@ -60,10 +60,9 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git checkout $REPO_COMMITID openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        cd openwrt
-        git checkout REPO_COMMITID
-        cd ..
+        
 
     - name: Load custom feeds
       run: |

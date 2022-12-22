@@ -100,7 +100,7 @@ jobs:
         name: openwrt-config-${{ env.DEVICE_NAME }}-${{ env.FILE_DATE }}
         path: /tmp/upload
     - name: Delete workflow runs
-      uses: GitRML/delete-workflow-runs@main
+      uses: FunctionXJB/delete-workflow-runs@main
       with:
         retain_days: 1
         keep_minimum_runs: 3
